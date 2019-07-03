@@ -68,23 +68,28 @@ As the name suggests, it is used mainly for regression problems
     \caption{\textbf{Using linear regression to compute the line best fit}}
 \end{figure}
 
+In our initial framework, this takes on the task of creating our $Z_x$ from $Z_g$ and then comparing it to our desired output $Z_y$
 \section{Logistic regression}
 
-Despite its name, it's not used mainly for regression problems, but instead, it is more compatible with classification problems. This is because the output of logistic regression is a probability, making it suitable to identify things. 
+Despite its name, it's not used mainly for regression problems, but instead, it is more compatible with classification problems. This is because the output of logistic regression is  a probability, making it suitable to identify things. 
+
+Like linear regression, it will extract a coordinate vector $Z_g$ from $Z_x$ and compare it to a predicted output $Z_y$.
+
+In this case, the result is a probability of a specific identification; if it's more than 0.5, we can predict it to be correct, else it is not. And we can obtain this probability by using the tanh function.
+
+\section{softmax regression}
+This is similar to logistic regression and is used between $Z_g$ and $Z_y$, but the output is a probility vector, meaning it can compare multiple components.
+
+Softmax function can be used to find the boundary between multiple variables, where the probability of 2 components in a vector is equal to 0.5. In the case of softmax, the boundary must be linear
 
 
+\section{Multilayer Perceptron (MLP)}
+When a boundary can not be expressed linearly (linearly non-separable), we must use another method. MLP is one of the most basic and useful way to do this.
 
-
-
-
-
-
-
-
-
-
+In our initial framework, it fit in as the step from $Z_g$ to $Z_y$ like earlier methods, and is use specifically for when the boundary cannot be expressed by earlier mentioned methods
 \end{document}
 
 
 
 
+gress
